@@ -3,58 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/ko/categories/</loc>
+    <loc>http://example.org/ko/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/categories/"
+                href="http://example.org/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/ko/categories/"
+                href="http://example.org/ko/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/ko/</loc>
+    <loc>http://example.org/ko/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/"
+                href="http://example.org/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/ko/"
+                href="http://example.org/ko/"
                 />
   </url>
   
   <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/ko/series/</loc>
+    <loc>http://example.org/ko/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/series/"
+                href="http://example.org/en/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/ko/series/"
+                href="http://example.org/ko/series/"
                 />
   </url>
   
   <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/ko/tags/</loc>
+    <loc>http://example.org/ko/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/"
+                href="http://example.org/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/ko/tags/"
+                href="http://example.org/ko/tags/"
                 />
   </url>
   
