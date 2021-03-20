@@ -1792,7 +1792,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Mar 19, 2021 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;3&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;5&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">🎅&nbsp;Adrián Venegas-Reynoso</span>
   
@@ -1918,7 +1918,165 @@ After applying both SNV and Savtizky-Golay filter (21 points, 2nd order polynomi
   
 </figure>
 <p>After applying these filters, the spectra looks as follows:</p>
-<h3 id="diff">Diff</h3>
+<figure >
+  
+  
+  
+    <img data-src="/AdrianVenegasReynosoChemometrics.github.io/images/NIR/processed.png" alt="image alt" data-caption="SNV and Savtizky-Golay filter, with 21 points, 2nd order polynomial and 2nd derivative." src="data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='' height='' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cpath fill='%23aaa' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4.44-6.19l-2.35 3.02-1.56-1.88c-.2-.25-.58-.24-.78.01l-1.74 2.23c-.26.33-.02.81.39.81h8.98c.41 0 .65-.47.4-.8l-2.55-3.39c-.19-.26-.59-.26-.79 0z'/%3E%3C/svg%3E" class="lazyload" style="width:;height:;"/>
+  
+
+  
+  
+    <figcaption style="text-align: ">
+      <strong>Processed spectra</strong>:
+      
+      SNV and Savtizky-Golay filter, with 21 points, 2nd order polynomial and 2nd derivative.
+      
+        
+        
+      
+    </figcaption>
+  
+</figure>
+<p>As we can see, the effect of the baseline is not present and the spectra looks smoother. Now, time to modeling.</p>
+<h3 id="data-modeling">Data modeling</h3>
+<p>First, we need to look at the data from a chemist point of view; the region of the spectra from 500 to ~690 nm is where chlorophyll absorbs visible light, which correlates with the color of the fruit, then from 750 to 950 nm, there&rsquo;s the region of the spectra where proteins and sugar absorb radiation, which is related to what we want to measure. Finally, we can see the influence of water in the region above 950 nm.</p>
+<p>This data can also be analyzed from a statistics point of view, by performing iPLS (interval Partial Least Squares), an algorithm that splits the data into several regions and performs PLS on them, then, it combines the models from<br />
+these intervals and evaluates if the change on the error of the resulting model is statistically significant. This process is repeated several times until all the intervals have been combined.</p>
+<p>In R, this can be easily performed with the <em>mdatools</em> library, for this the following code was used, where the spectra was divided into 32 internal segments and 7 global segments.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">mdatools</span><span class="p">)</span>
+<span class="n">intervals</span> <span class="o">&lt;-</span> <span class="nf">ipls</span><span class="p">(</span><span class="n">spectra</span><span class="p">,</span> <span class="n">y_response</span><span class="p">,</span> <span class="n">glob.ncomp</span><span class="o">=</span><span class="m">7</span><span class="p">,</span> <span class="n">int.num</span><span class="o">=</span><span class="m">32</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#34;forward&#34;</span><span class="p">)</span> 
+<span class="nf">summary</span><span class="p">(</span><span class="n">intervals</span><span class="p">)</span>              
+<span class="nf">plot</span><span class="p">(</span><span class="n">intervals</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><figure >
+  
+  
+  
+    <img data-src="/AdrianVenegasReynosoChemometrics.github.io/images/NIR/iPLS.png" alt="image alt" data-caption="The plot shows the error of the cross-validation, obtained by adding each segment of the spectra to the model, in green we can observe the regions of the spectra that provide an statistical improvement to the model." src="data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='' height='' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cpath fill='%23aaa' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4.44-6.19l-2.35 3.02-1.56-1.88c-.2-.25-.58-.24-.78.01l-1.74 2.23c-.26.33-.02.81.39.81h8.98c.41 0 .65-.47.4-.8l-2.55-3.39c-.19-.26-.59-.26-.79 0z'/%3E%3C/svg%3E" class="lazyload" style="width:;height:;"/>
+  
+
+  
+  
+    <figcaption style="text-align: ">
+      <strong>iPLS</strong>:
+      
+      The plot shows the error of the cross-validation, obtained by adding each segment of the spectra to the model, in green we can observe the regions of the spectra that provide an statistical improvement to the model.
+      
+        
+        
+      
+    </figcaption>
+  
+</figure>
+<p>From this plot, we can see that the variables with an index from ~150 to ~190, which translate to a region of the spectra from ~740 to ~950 nm. The chemical and the statistical agree on which part of the spectra is useful for developing the model, obviously, the starting and ending wavelengths can be fine-tuned later by monitoring the error of the validation of the model.</p>
+<p>Just as a very brief summary, first we pre-process the data with SNV and Savtizky-Golay filter, and then, the area of interest of the spectra was chosen from the pre-processed data.</p>
+<p>Now, to develop the model, the Partial Least Squares method (PLS) was used, in R this can be easily implemented with the <em>pls</em> library:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">pls</span><span class="p">)</span>
+<span class="nf">pls.options</span><span class="p">(</span><span class="n">parallel</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
+
+
+<span class="n">ncomp</span> <span class="o">&lt;-</span> <span class="m">10</span>
+<span class="n">spectra_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">y_response</span><span class="o">=</span><span class="n">y_response</span><span class="p">,</span> <span class="n">NIR</span><span class="o">=</span><span class="nf">I</span><span class="p">(</span><span class="n">spectra</span><span class="p">))</span>
+<span class="n">pls_model</span> <span class="o">&lt;-</span> <span class="nf">plsr</span><span class="p">(</span><span class="n">y_response</span> <span class="o">~</span> <span class="n">NIR</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">spectra_data</span><span class="p">,</span> <span class="n">ncomp</span><span class="o">=</span><span class="n">ncomp</span><span class="p">)</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p>From the previous code, first the library <em>pls</em> is loaded, (let&rsquo;s ignore the second line for now), then, <em>ncomp</em> stands for &ldquo;number of components&rdquo; or latent variables that were used to develop the model, the spectra and the value of the reference method (ºBrix)  are neatly organized into a data frame and the model is built with the <em>plsr</em> function.</p>
+<p>We can look at the scores plot by graphing the latent variable 1 against the latent variable 2 with <em>ggplot2</em>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+
+<span class="n">scores_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">LV1</span><span class="o">=</span><span class="n">pls_model</span><span class="o">$</span><span class="n">scores[</span><span class="p">,</span><span class="m">2</span><span class="n">]</span><span class="p">,</span><span class="n">LV2</span><span class="o">=</span><span class="n">pls_model</span><span class="o">$</span><span class="n">scores[</span><span class="p">,</span><span class="m">3</span><span class="n">]</span><span class="p">,</span> <span class="n">LV3</span><span class="o">=</span><span class="n">pls_model</span><span class="o">$</span><span class="n">scores[</span><span class="p">,</span><span class="m">3</span><span class="n">]</span><span class="p">,</span><span class="n">Y</span><span class="o">=</span><span class="n">y_response</span><span class="p">)</span>
+<span class="n">scores_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">LV</span><span class="o">=</span><span class="nf">I</span><span class="p">(</span><span class="n">pls_model</span><span class="o">$</span><span class="n">scores</span><span class="p">),</span> <span class="n">Y</span><span class="o">=</span><span class="n">y_response</span><span class="p">)</span>
+<span class="n">scores</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">()</span> <span class="o">+</span>
+        <span class="nf">geom_point</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">scores_data</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">LV[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">LV[</span><span class="p">,</span><span class="m">3</span><span class="n">]</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">Y</span><span class="p">))</span> <span class="o">+</span>
+        <span class="nf">scale_color_gradientn</span><span class="p">(</span><span class="n">colors</span><span class="o">=</span><span class="nf">rainbow</span><span class="p">(</span><span class="m">5</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><figure >
+  
+  
+  
+    <img data-src="/AdrianVenegasReynosoChemometrics.github.io/images/NIR/scores.png" alt="image alt" data-caption="Scores plot of latent variable 1 vs latent variable 2." src="data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='' height='' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cpath fill='%23aaa' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4.44-6.19l-2.35 3.02-1.56-1.88c-.2-.25-.58-.24-.78.01l-1.74 2.23c-.26.33-.02.81.39.81h8.98c.41 0 .65-.47.4-.8l-2.55-3.39c-.19-.26-.59-.26-.79 0z'/%3E%3C/svg%3E" class="lazyload" style="width:;height:;"/>
+  
+
+  
+  
+    <figcaption style="text-align: ">
+      <strong>Scores plot</strong>:
+      
+      Scores plot of latent variable 1 vs latent variable 2.
+      
+        
+        
+      
+    </figcaption>
+  
+</figure>
+<p>As it&rsquo;s possible to observe, when we plot LV 1 vs LV2, samples are localized in the plane according to their ºBrix (in the plot, it&rsquo;s named as &ldquo;Y&rdquo;), which shows that the model is able to discriminate according to the content of sugars. More analysis can be done from the results, such as looking at the loadings and scree plots, but in attempt to keep this post as short as possible, these steps will be omitted.</p>
+<h3 id="model-validation">Model validation</h3>
+<p>A model is meaningless if it&rsquo;s not validated. Even though it is possible to calculate the R2 from our model, this value can be meaningless if we over-fit our data. This means that our model can be extremely good at predicting the data it was provided with, but it has a bad performance at predicting new data, which in the end, is the purpose of making a model.<br />
+Some of the most common ways of validating a model are:</p>
+<ul>
+<li>Internal calibration: A common algorithm is the Leave One Out (LOO), which consists of making the model with all the data except a single one, which will be predicted and then the error is calculated. The process is repeated for every point in the data set.</li>
+<li>External calibration: Before starting, the data set is divided into a calibration and a test set, the first contains around ~70% of the data while the latter has ~30%. The model is regressed on the calibration set and then the test set is predicted.</li>
+</ul>
+<p>Internal calibration usually ends up in over-confident estimates of the model, while external calibration is very susceptible to luck, why? Because we could select a test set that can be particularly easy or difficult to predict.</p>
+<p>In order to overcome these limitations, can perform a cross-validation algorithm known as k-folds, where the data set is divided in <em>k</em> segments, one of the segments is left out and the regression model is built with the others, then the excluded segment is predicted and the error of the prediction calculated, the process is repeated until every segment has been left out, and the errors are averaged.</p>
+<p>In R, the <em>pls</em> algorithm includes a function that allows to perform cross-validation seamlessly.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">pls</span><span class="p">)</span>
+<span class="nf">pls.options</span><span class="p">(</span><span class="n">parallel</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
+
+
+<span class="n">ncomp</span> <span class="o">&lt;-</span> <span class="m">10</span>
+<span class="n">spectra_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">y_response</span><span class="o">=</span><span class="n">y_response</span><span class="p">,</span> <span class="n">NIR</span><span class="o">=</span><span class="nf">I</span><span class="p">(</span><span class="n">spectra</span><span class="p">))</span>
+<span class="n">pls_model</span> <span class="o">&lt;-</span> <span class="nf">plsr</span><span class="p">(</span><span class="n">y_response</span> <span class="o">~</span> <span class="n">NIR</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">spectra_data</span><span class="p">,</span> <span class="n">ncomp</span><span class="o">=</span><span class="n">ncomp</span><span class="p">)</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="diff">Diff</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -3180,6 +3338,8 @@ document.addEventListener('DOMContentLoaded', function () {
       <ul>
         <li><a href="#data-visualization">Data visualization</a></li>
         <li><a href="#data-pre-processing">Data pre-processing</a></li>
+        <li><a href="#data-modeling">Data modeling</a></li>
+        <li><a href="#model-validation">Model validation</a></li>
         <li><a href="#diff">Diff</a></li>
         <li><a href="#makefile">Makefile</a></li>
         <li><a href="#json">JSON</a></li>
@@ -3810,14 +3970,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
-      
-        
         
           
             
               <a href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/nir/" data-lang="en" class="dropdown-item is-active">English</a>
             
           
+        
+      
         
       
         
