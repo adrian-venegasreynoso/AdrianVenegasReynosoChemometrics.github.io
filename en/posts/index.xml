@@ -14,22 +14,22 @@
     <managingEditor>zzossig@gmail.com (zzossig)</managingEditor>
     <webMaster>zzossig@gmail.com (zzossig)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 23 Dec 2020 13:42:32 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 19 Mar 2021 19:22:15 +0100</lastBuildDate>
     
         <atom:link href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
       
       <item>
-        <title>Genetic algorithms for multi linear regression</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/genetic/</link>
-        <pubDate>Wed, 23 Dec 2020 13:42:32 -0600</pubDate>
+        <title>Use of Near-Infrared (NIR) Spectroscopy to measure the sugar content in fruits</title>
+        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/nir/</link>
+        <pubDate>Fri, 19 Mar 2021 19:22:15 +0100</pubDate>
         <author>zzossig@gmail.com (zzossig)</author>
-        <atom:modified>Wed, 23 Dec 2020 13:42:32 -0600</atom:modified>
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/genetic/</guid>
-        <description>Subtitle In chemometrics (and other areas) it&amp;rsquo;s necessary to implement linear regressions to predict the behavior of a system or as calibration curves. In the paper titled &amp;ldquo;Quantitative structure-property relationships prediction of some physico-chemical properties of glycerol based solvents&amp;rdquo; by Pascual Pérez et. al., the authors predicted physico-chemical properties of these solvents in order to facilitate the search of possible applications for them. The authors used</description>
+        <atom:modified>Fri, 19 Mar 2021 19:22:15 +0100</atom:modified>
+        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/nir/</guid>
+        <description>Overview Near-Infrared is the region of the electromagnetic that spans from 780 nm to 2500 nm. For a long time, it was regarded as the &amp;ldquo;garbage can&amp;rdquo; of spectroscopy, since spectral bands in this region are broad, of low intensity and hard to interpret. In comparison to other techniques, the development of NIRS was mainly driven by its applications and not by the knowledge of the physical phenomena. It was</description>
         
-        <dc:creator>Adrián</dc:creator>
+        <dc:creator>Adrián Venegas-Reynoso</dc:creator>
         <media:content url="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/images/feature2/color-palette.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
@@ -55,15 +55,15 @@
       </item>
       
       <item>
-        <title>Use of Near-Infrared (NIR) Spectroscopy to measure the sugar content in fruits</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/nir/</link>
+        <title>Genetic algorithms for multi linear regression</title>
+        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/genetic/</link>
         <pubDate>Wed, 23 Dec 2020 13:42:32 -0600</pubDate>
         <author>zzossig@gmail.com (zzossig)</author>
         <atom:modified>Wed, 23 Dec 2020 13:42:32 -0600</atom:modified>
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/nir/</guid>
-        <description>Overview Near-Infrared is the region of the electromagnetic that spans from 780 nm to 2500 nm. For a long time, it was regarded as the &amp;ldquo;garbage can&amp;rdquo; of spectroscopy, since spectral bands in this region are broad, of low intensity and hard to interpret. In comparison to other techniques, the development of NIRS was mainly driven by its applications and not by the knowledge of the physical phenomena. It was</description>
+        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/genetic/</guid>
+        <description>Subtitle In chemometrics (and other areas) it&amp;rsquo;s necessary to implement linear regressions to predict the behavior of a system or as calibration curves. In the paper titled &amp;ldquo;Quantitative structure-property relationships prediction of some physico-chemical properties of glycerol based solvents&amp;rdquo; by Pascual Pérez et. al., the authors predicted physico-chemical properties of these solvents in order to facilitate the search of possible applications for them. The authors used</description>
         
-        <dc:creator>Adrián Venegas-Reynoso</dc:creator>
+        <dc:creator>Adrián</dc:creator>
         <media:content url="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/images/feature2/color-palette.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
