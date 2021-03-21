@@ -1792,7 +1792,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Mar 19, 2021 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;5&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;12&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">🎅&nbsp;Adrián Venegas-Reynoso</span>
   
@@ -2054,8 +2054,7 @@ Some of the most common ways of validating a model are:</p>
 <li>External calibration: Before starting, the data set is divided into a calibration and a test set, the first contains around ~70% of the data while the latter has ~30%. The model is regressed on the calibration set and then the test set is predicted.</li>
 </ul>
 <p>Internal calibration usually ends up in over-confident estimates of the model, while external calibration is very susceptible to luck, why? Because we could select a test set that can be particularly easy or difficult to predict.</p>
-<p>In order to overcome these limitations, can perform a cross-validation algorithm known as k-folds, where the data set is divided in <em>k</em> segments, one of the segments is left out and the regression model is built with the others, then the excluded segment is predicted and the error of the prediction calculated, the process is repeated until every segment has been left out, and the errors are averaged.</p>
-<p>In R, the <em>pls</em> algorithm includes a function that allows to perform cross-validation seamlessly.</p>
+<p>In order to overcome these limitations, it is possible to perform a cross-validation algorithm known as k-folds, where the data set is divided in <em>k</em> segments, one of the segments is left out and the regression model is built with the others, then the excluded segment is predicted and the error of the prediction calculated, the process is repeated until every segment has been left out, and the errors are averaged. R has perform these calculations with the <em>pls</em> and <em>parallel</em> libraries, the latter package allows to use different CPU cores in order to complete the calculations faster.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2064,11 +2063,9 @@ Some of the most common ways of validating a model are:</p>
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">pls</span><span class="p">)</span>
-<span class="nf">pls.options</span><span class="p">(</span><span class="n">parallel</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">pls.options</span><span class="p">(</span><span class="n">parallel</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
 
 
 <span class="n">ncomp</span> <span class="o">&lt;-</span> <span class="m">10</span>
@@ -2076,531 +2073,97 @@ Some of the most common ways of validating a model are:</p>
 <span class="n">pls_model</span> <span class="o">&lt;-</span> <span class="nf">plsr</span><span class="p">(</span><span class="n">y_response</span> <span class="o">~</span> <span class="n">NIR</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">spectra_data</span><span class="p">,</span> <span class="n">ncomp</span><span class="o">=</span><span class="n">ncomp</span><span class="p">)</span> 
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="diff">Diff</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="hl"><span class="lnt"> 4
-</span></span><span class="lnt"> 5
-</span><span class="hl"><span class="lnt"> 6
-</span></span><span class="hl"><span class="lnt"> 7
-</span></span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-diff" data-lang="diff">*** /path/to/original	&#39;&#39;timestamp&#39;&#39;
-<span class="gd">--- /path/to/new	&#39;&#39;timestamp&#39;&#39;
-</span><span class="gd"></span>***************
-<span class="hl">*** 1 ****
-</span><span class="gs">! This is a line.
-</span><span class="hl"><span class="gs"></span><span class="gd">--- 1 ---
-</span></span><span class="hl"><span class="gd"></span><span class="gs">! This is a replacement line.
-</span></span><span class="gs"></span>It is important to spell
-<span class="gd">-removed line
-</span><span class="gd"></span><span class="gi">+new line
-</span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><pre class="chroma"><code class="language-diff" data-lang="diff">*** /path/to/original	&#39;&#39;timestamp&#39;&#39;
-<span class="gd">--- /path/to/new	&#39;&#39;timestamp&#39;&#39;
-</span><span class="gd"></span>***************
-<span class="hl">*** 1 ****
-</span><span class="gs">! This is a line.
-</span><span class="hl"><span class="gs"></span><span class="gd">--- 1 ---
-</span></span><span class="hl"><span class="gd"></span><span class="gs">! This is a replacement line.
-</span></span><span class="gs"></span>It is important to spell
-<span class="gd">-removed line
-</span><span class="gd"></span><span class="gi">+new line
-</span></code></pre></div><h3 id="makefile">Makefile</h3>
-<div class="highlight"><pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nv">CC</span><span class="o">=</span>gcc
-<span class="nv">CFLAGS</span><span class="o">=</span>-I.
+</div><p>Since we are looking at spectroscopic data, a very useful approach to select the number of latent variables is to look at the loadings plots (loadings vs wavelength), when these graphs stop to resemble the original spectra and start showing noise, it&rsquo;s a signal to stop adding variables to our model.</p>
+<figure >
+  
+  
+  
+    <img data-src="/AdrianVenegasReynosoChemometrics.github.io/images/NIR/loadings.png" alt="image alt" data-caption="The first plot corresponds to the pre-processed data on the selected region of the spectra, the following graphs show the loadings of latent variables 1, 2, 5,9 and 10, as it&#39;s possible to see, the loadings resemble the original data, but by LV 10, some noise starts to appear." src="data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='' height='' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cpath fill='%23aaa' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4.44-6.19l-2.35 3.02-1.56-1.88c-.2-.25-.58-.24-.78.01l-1.74 2.23c-.26.33-.02.81.39.81h8.98c.41 0 .65-.47.4-.8l-2.55-3.39c-.19-.26-.59-.26-.79 0z'/%3E%3C/svg%3E" class="lazyload" style="width:;height:;"/>
+  
 
-<span class="nf">hellomake</span><span class="o">:</span> <span class="n">hellomake</span>.<span class="n">o</span> <span class="n">hellofunc</span>.<span class="n">o</span>
-     <span class="k">$(</span>CC<span class="k">)</span> -o hellomake hellomake.o hellofunc.o -I.
-</code></pre></div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nv">CC</span><span class="o">=</span>gcc
-<span class="nv">CFLAGS</span><span class="o">=</span>-I.
+  
+  
+    <figcaption style="text-align: ">
+      <strong>Loadings plot</strong>:
+      
+      The first plot corresponds to the pre-processed data on the selected region of the spectra, the following graphs show the loadings of latent variables 1, 2, 5,9 and 10, as it&#39;s possible to see, the loadings resemble the original data, but by LV 10, some noise starts to appear.
+      
+        
+        
+      
+    </figcaption>
+  
+</figure>
+<p>In this case, 9 latent variables were considered to be an adequate amount of components for the model.</p>
+<h3 id="calibration-transfer">Calibration transfer</h3>
+<p>Sometimes different instruments will be needed to perform the measurements in field, but a problem arises from the differences between them, since they may obtain different signals from the sample sample (wavelength and intensity shifts). A way to overcome this problem without repeating the calibration on all the instruments (which is an expensive and time demanding procedure) it is possible to transfer the calibration between instruments. This process consists on selecting a smaller number of samples which will be measured with all the available instruments, including the one which was used to build the model (master instrument). In general terms, the calibration transfer is done by converting the spectra obtained on the same sample by the &ldquo;slave&rdquo; instruments to the signal the &ldquo;master&rdquo; instrument measures. A popular algorithm to perform such task is Piecewise Direct Standardization, the method uses PLS to build a model to predict the master&rsquo;s instrument spectra from the slave&rsquo;s instrument one. A very useful explanation is available at: <a href="https://guifh.github.io/RNIR/PDS.html">https://guifh.github.io/RNIR/PDS.html</a>. For this project, I made a function (transfer.R) that separated the data from the standardization set into the slave and master data, the data was pre-processed as it has been previously mentioned and then, PDS was applied to each of the 6 slave&rsquo;s instrument data, finally, the obtained models are used to transform the spectra from the validation set into &ldquo;instrument 1&rdquo; data.</p>
+<figure >
+  
+  
+  
+    <img data-src="/AdrianVenegasReynosoChemometrics.github.io/images/NIR/PDS.png" alt="image alt" data-caption="The blue spectra come from the pre-processed data from the master instrument, in green we can observe the data of the spectra obtained with a slave instrument and in red, we can see the spectra after it has been standardized, it&#39;s possible to see the spectra resembles the master&#39;s instrument data more." src="data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='' height='' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cpath fill='%23aaa' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4.44-6.19l-2.35 3.02-1.56-1.88c-.2-.25-.58-.24-.78.01l-1.74 2.23c-.26.33-.02.81.39.81h8.98c.41 0 .65-.47.4-.8l-2.55-3.39c-.19-.26-.59-.26-.79 0z'/%3E%3C/svg%3E" class="lazyload" style="width:;height:;"/>
+  
 
-<span class="nf">hellomake</span><span class="o">:</span> <span class="n">hellomake</span>.<span class="n">o</span> <span class="n">hellofunc</span>.<span class="n">o</span>
-     <span class="k">$(</span>CC<span class="k">)</span> -o hellomake hellomake.o hellofunc.o -I.
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="json">JSON</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span><span class="nt">&#34;employees&#34;</span><span class="p">:[</span>
-    <span class="p">{</span><span class="nt">&#34;firstName&#34;</span><span class="p">:</span><span class="s2">&#34;John&#34;</span><span class="p">,</span> <span class="nt">&#34;lastName&#34;</span><span class="p">:</span><span class="s2">&#34;Doe&#34;</span><span class="p">},</span>
-<span class="p">]}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="markdown">Markdown</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-markdown" data-lang="markdown">**bold** 
-<span class="ge">*italics*</span> 
-[<span class="nt">link</span>](<span class="na">www.example.com</span>)
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="javascript">JavaScript</h3>
+  
+  
+    <figcaption style="text-align: ">
+      <strong>Piecewise Direct Standardization</strong>:
+      
+      The blue spectra come from the pre-processed data from the master instrument, in green we can observe the data of the spectra obtained with a slave instrument and in red, we can see the spectra after it has been standardized, it&#39;s possible to see the spectra resembles the master&#39;s instrument data more.
+      
+        
+        
+      
+    </figcaption>
+  
+</figure>
+<h3 id="final-prediction">Final prediction</h3>
+<p>Final prediction is applied to the validation set after it has been pre-processed and standardized to the master instrument.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">);</span>
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">predictions</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">pls_model</span><span class="p">,</span> <span class="n">ncomp</span><span class="o">=</span><span class="n">ncomp</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">validation</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="css">CSS</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">body</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="r">R</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">a</span> <span class="o">&lt;-</span> <span class="n">b</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="objective-c">Objective C</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-objectivec" data-lang="objectivec"><span class="cp">#import &lt;stdio.h&gt;
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-	<span class="n">printf</span> <span class="p">(</span><span class="s">&#34;Hello world!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="python">Python</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span> <span class="s2">&#34;Hello, world!&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="xml">XML</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;employees&gt;</span>
-    <span class="nt">&lt;employee&gt;</span>
-        <span class="nt">&lt;firstName&gt;</span>John<span class="nt">&lt;/firstName&gt;</span> <span class="nt">&lt;lastName&gt;</span>Doe<span class="nt">&lt;/lastName&gt;</span>
-    <span class="nt">&lt;/employee&gt;</span>
-<span class="nt">&lt;/employees&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="perl">Perl</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">print</span> <span class="s">&#34;Hello, World!\n&#34;</span><span class="p">;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="bash">Bash</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;Hello World&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="php">PHP</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"> <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="s1">&#39;&lt;p&gt;Hello World&lt;/p&gt;&#39;</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="err"> 
-</span></code></pre></td></tr></table>
-</div>
-</div><h3 id="coffeescript">CoffeeScript</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-coffeescript" data-lang="coffeescript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">“</span><span class="nx">Hello</span> <span class="nx">world</span><span class="o">!</span><span class="err">”</span><span class="p">);</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="c">C#</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-cs" data-lang="cs"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">Program</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="c-1">C++</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream.h&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="n">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="sql">SQL</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="k">column_name</span><span class="p">,</span><span class="k">column_name</span>
-<span class="k">FROM</span> <span class="k">table_name</span><span class="p">;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="go">Go</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Hello, 世界&#34;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="ruby">Ruby</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s2">&#34;Hello, world!&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="java">Java</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">javax.swing.JFrame</span><span class="o">;</span>  <span class="c1">//Importing class JFrame
-</span><span class="c1"></span><span class="kn">import</span> <span class="nn">javax.swing.JLabel</span><span class="o">;</span>  <span class="c1">//Importing class JLabel
-</span><span class="c1"></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">JFrame</span> <span class="n">frame</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JFrame</span><span class="o">();</span>           <span class="c1">//Creating frame
-</span><span class="c1"></span>        <span class="n">frame</span><span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="s">&#34;Hi!&#34;</span><span class="o">);</span>                 <span class="c1">//Setting title frame
-</span><span class="c1"></span>        <span class="n">frame</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">JLabel</span><span class="o">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="o">));</span><span class="c1">//Adding text to frame
-</span><span class="c1"></span>        <span class="n">frame</span><span class="o">.</span><span class="na">pack</span><span class="o">();</span>                          <span class="c1">//Setting size to smallest
-</span><span class="c1"></span>        <span class="n">frame</span><span class="o">.</span><span class="na">setLocationRelativeTo</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>     <span class="c1">//Centering frame
-</span><span class="c1"></span>        <span class="n">frame</span><span class="o">.</span><span class="na">setVisible</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>                <span class="c1">//Showing frame
-</span><span class="c1"></span>    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="latex-equation">Latex Equation</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\frac</span><span class="nb">{</span>d<span class="nb">}{</span>dx<span class="nb">}</span><span class="k">\left</span>( <span class="k">\int</span><span class="nb">_{</span>0<span class="nb">}^{</span>x<span class="nb">}</span> f(u)<span class="k">\,</span>du<span class="k">\right</span>)=f(x).
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">}</span> <span class="nx">as</span> <span class="nx">p</span> <span class="nx">from</span> <span class="s1">&#39;point&#39;</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">ANSWER</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+</div><p>After this, we have a vector with 993 values containing the sugar content in ºBrix,</p>
+<figure >
+  
+  
+  
+    <img data-src="/AdrianVenegasReynosoChemometrics.github.io/images/NIR/scatterplot.png" alt="image alt" data-caption="Scatter plot showing the relation between reference and predicted values, perfect prediction is showed with the red line." src="data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='' height='' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cpath fill='%23aaa' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4.44-6.19l-2.35 3.02-1.56-1.88c-.2-.25-.58-.24-.78.01l-1.74 2.23c-.26.33-.02.81.39.81h8.98c.41 0 .65-.47.4-.8l-2.55-3.39c-.19-.26-.59-.26-.79 0z'/%3E%3C/svg%3E" class="lazyload" style="width:;height:;"/>
+  
 
-<span class="kr">class</span> <span class="nx">Car</span> <span class="kr">extends</span> <span class="nx">Vehicle</span> <span class="p">{</span>
-  <span class="nx">constructor</span><span class="p">(</span><span class="nx">speed</span><span class="p">,</span> <span class="nx">cost</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">super</span><span class="p">(</span><span class="nx">speed</span><span class="p">);</span>
+  
+  
+    <figcaption style="text-align: ">
+      <strong>Reference vs predicted values</strong>:
+      
+      Scatter plot showing the relation between reference and predicted values, perfect prediction is showed with the red line.
+      
+        
+        
+      
+    </figcaption>
+  
+</figure>
+<p>The error of the model, expressed is:</p>
+<p>$$ RMSEP = \sqrt{\frac{\sum_i^n(y_i - \hat{y_i})^2}{n}} = 0.79$$</p>
+<p>Where $n$ is the number of samples, $y_i$ is the $i$-th reference value and $\hat{y_i}$ is its prediction. The relative error of the model is around 5.6%.<br />
+Another way to assess the quality of the model is through the RDP, which is the standard deviation of the reference values divided by the RMSEP of the model.</p>
+<p>The RDP can be classified as:</p>
+<ul>
+<li>1.5 - 2: The model can discriminate between high and low range values.</li>
+<li>2 - 2.5: Rough predictions.</li>
+<li>3: Good.</li>
+<li>4: Excellent.</li>
+</ul>
+<p>For this case, an RDP of 2.36 was obtained.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>PLS was used to predict the sugar content in fruits from its NIR spectra. SNV and Savitzky-Golay filter (21 points, 2nd order polynomial and 2nd derivative) where used to treat the data, also the spectral region 750-950 nm was used.<br />
+Validation of the model was done with cross-validation (k-folds) and by looking at the loadings plot, 9 latent variables were chosen. Then, Piecewise Direct Standardization was used to transfer the calibration between 6 slave instruments. Finally, the obtained model was applied on the pre-processed and standardized data, obtaining a relative RMSEP of 5.6% and an RDP of 2.36, meaning that the obtained model can only be used to make rough predictions. The model could be improved by exploring other pre-processing techniques such as (Extended) Multiplicative Scatter Correction, also, other algorithms to perform the regression can be used, such as Support Vector Machines and Artificial Neural Networks.</p>
 
-    <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s1">&#39;cost&#39;</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span> <span class="o">=</span> <span class="nx">cost</span><span class="p">;</span>
-
-    <span class="k">this</span><span class="p">.</span><span class="nx">intro</span> <span class="o">=</span> <span class="sb">`This is a car runs at
-</span><span class="sb">      </span><span class="si">${</span><span class="nx">speed</span><span class="si">}</span><span class="sb">.`</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">num</span> <span class="k">of</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span> <span class="o">+</span> <span class="mb">0b111110111</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">$initHighlight</span><span class="p">(</span><span class="nx">block</span><span class="p">,</span> <span class="nx">flags</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">block</span><span class="p">.</span><span class="nx">className</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/\bno\-highlight\b/</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-      <span class="k">return</span> <span class="nx">processBlock</span><span class="p">(</span><span class="nx">block</span><span class="p">.</span><span class="kd">function</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="mh">0x0F</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; class=&#34;&#34;&#39;</span><span class="p">;</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="cm">/* handle exception */</span>
-    <span class="kd">var</span> <span class="nx">e4x</span> <span class="o">=</span>
-        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Example</span>
-            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mi">1234</span><span class="o">&lt;</span><span class="err">/p&gt;&lt;/div&gt;;</span>
-  <span class="p">}</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">classes</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// &#34;0 / 2&#34; should not be parsed as regexp
-</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">checkCondition</span><span class="p">(</span><span class="nx">classes</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span>
-      <span class="k">return</span> <span class="sr">/\d+[\s/]/g</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">classes</span><span class="p">,</span> <span class="nb">Boolean</span><span class="p">));</span>
-<span class="p">}</span>
-
-<span class="kr">export</span>  <span class="nx">$initHighlight</span><span class="p">;</span>
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Hello world<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&#39;http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic&#39;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#39;stylesheet&#39;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text/css&#39;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;index.css&#34;</span> <span class="p">/&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;app&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;vendor/prism.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;examples.bundle.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="c">/*********************************************************
-</span><span class="c">* General
-</span><span class="c">*/</span>
-<span class="nt">pre</span><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&#34;language-&#34;</span><span class="o">],</span>
-<span class="nt">code</span> <span class="p">{</span>
-  <span class="k">color</span><span class="p">:</span> <span class="mh">#5c6e74</span><span class="p">;</span>
-  <span class="k">font-size</span><span class="p">:</span> <span class="mi">13</span><span class="kt">px</span><span class="p">;</span>
-  <span class="k">text-shadow</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-  <span class="k">font-family</span><span class="p">:</span> <span class="n">Consolas</span><span class="p">,</span> <span class="n">Monaco</span><span class="p">,</span> <span class="s1">&#39;Andale Mono&#39;</span><span class="p">,</span> <span class="s1">&#39;Ubuntu Mono&#39;</span><span class="p">,</span> <span class="kc">monospace</span><span class="p">;</span>
-  <span class="k">direction</span><span class="p">:</span> <span class="kc">ltr</span><span class="p">;</span>
-  <span class="k">text-align</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
-  <span class="k">white-space</span><span class="p">:</span> <span class="kc">pre</span><span class="p">;</span>
-  <span class="k">word-spacing</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span>
-  <span class="k">word-break</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span>
-  <span class="k">line-height</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">;</span>
-  <span class="k">tab-size</span><span class="p">:</span> <span class="mi">4</span><span class="p">;</span>
-  <span class="k">hyphens</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">pre</span><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&#34;language-&#34;</span><span class="o">]</span><span class="p">::</span><span class="nd">selection</span><span class="o">,</span>
-<span class="nt">code</span><span class="p">::</span><span class="nd">selection</span> <span class="p">{</span>
-  <span class="k">text-shadow</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-  <span class="k">background</span><span class="p">:</span> <span class="mh">#b3d4fc</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">@</span><span class="k">media</span> <span class="nt">print</span> <span class="p">{</span>
-  <span class="nt">pre</span><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&#34;language-&#34;</span><span class="o">],</span>
-  <span class="nt">code</span> <span class="p">{</span>
-    <span class="k">text-shadow</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="nt">pre</span><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&#34;language-&#34;</span><span class="o">]</span> <span class="p">{</span>
-  <span class="k">padding</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
-  <span class="k">margin</span><span class="p">:</span> <span class="mf">.5</span><span class="kt">em</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="k">overflow</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
-  <span class="k">background</span><span class="p">:</span> <span class="mh">#f8f5ec</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">:</span><span class="nd">not</span><span class="o">(</span><span class="nt">pre</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">code</span> <span class="p">{</span>
-  <span class="k">padding</span><span class="p">:</span> <span class="mf">.1</span><span class="kt">em</span> <span class="mf">.3</span><span class="kt">em</span><span class="p">;</span>
-  <span class="k">border-radius</span><span class="p">:</span> <span class="mf">.3</span><span class="kt">em</span><span class="p">;</span>
-  <span class="k">color</span><span class="p">:</span> <span class="mh">#db4c69</span><span class="p">;</span>
-  <span class="k">background</span><span class="p">:</span> <span class="mh">#f9f2f4</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div>
     </article>
     
     
@@ -3340,29 +2903,11 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><a href="#data-pre-processing">Data pre-processing</a></li>
         <li><a href="#data-modeling">Data modeling</a></li>
         <li><a href="#model-validation">Model validation</a></li>
-        <li><a href="#diff">Diff</a></li>
-        <li><a href="#makefile">Makefile</a></li>
-        <li><a href="#json">JSON</a></li>
-        <li><a href="#markdown">Markdown</a></li>
-        <li><a href="#javascript">JavaScript</a></li>
-        <li><a href="#css">CSS</a></li>
-        <li><a href="#r">R</a></li>
-        <li><a href="#objective-c">Objective C</a></li>
-        <li><a href="#python">Python</a></li>
-        <li><a href="#xml">XML</a></li>
-        <li><a href="#perl">Perl</a></li>
-        <li><a href="#bash">Bash</a></li>
-        <li><a href="#php">PHP</a></li>
-        <li><a href="#coffeescript">CoffeeScript</a></li>
-        <li><a href="#c">C#</a></li>
-        <li><a href="#c-1">C++</a></li>
-        <li><a href="#sql">SQL</a></li>
-        <li><a href="#go">Go</a></li>
-        <li><a href="#ruby">Ruby</a></li>
-        <li><a href="#java">Java</a></li>
-        <li><a href="#latex-equation">Latex Equation</a></li>
+        <li><a href="#calibration-transfer">Calibration transfer</a></li>
+        <li><a href="#final-prediction">Final prediction</a></li>
       </ul>
     </li>
+    <li><a href="#conclusions">Conclusions</a></li>
   </ul>
 </nav>
   </div>
@@ -3970,14 +3515,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
+      
+        
         
           
             
               <a href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/nir/" data-lang="en" class="dropdown-item is-active">English</a>
             
           
-        
-      
         
       
         
