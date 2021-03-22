@@ -14,7 +14,7 @@
   
   <url>
     <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/</loc>
-    <lastmod>2021-03-19T19:22:15+01:00</lastmod>
+    <lastmod>2021-03-22T19:48:29+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -29,6 +29,46 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/genetic-algorithms/</loc>
+    <lastmod>2021-03-22T19:48:29+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/genetic/</loc>
+    <lastmod>2021-03-22T19:48:29+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/multi-linear-regression/</loc>
+    <lastmod>2021-03-22T19:48:29+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/</loc>
+    <lastmod>2021-03-22T19:48:29+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/</loc>
+    <lastmod>2021-03-22T19:48:29+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/ko/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="scss_b4f67ac5085b89b62b54c1923e5a9145"
+                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/scss_b4f67ac5085b89b62b54c1923e5a9145/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/"
                 />
   </url>
   
@@ -63,38 +103,8 @@
   </url>
   
   <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/</loc>
-    <lastmod>2021-03-19T19:22:15+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/</loc>
-    <lastmod>2021-03-19T19:22:15+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/ko/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="scss_b4f67ac5085b89b62b54c1923e5a9145"
-                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/scss_b4f67ac5085b89b62b54c1923e5a9145/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/"
-                />
-  </url>
-  
-  <url>
     <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/nir/</loc>
     <lastmod>2021-03-19T19:22:15+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/genetic/</loc>
-    <lastmod>2020-12-23T13:42:32-06:00</lastmod>
   </url>
   
   <url>
@@ -118,16 +128,6 @@
   </url>
   
   <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/shortcode/</loc>
-    <lastmod>2020-01-25T06:40:51+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/shortcodes/</loc>
-    <lastmod>2020-01-25T06:40:51+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/showcase/hugo/</loc>
     <lastmod>2020-01-19T21:04:11+09:00</lastmod>
   </url>
@@ -135,191 +135,6 @@
   <url>
     <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/showcase/</loc>
     <lastmod>2020-01-19T15:43:38+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/css/</loc>
-    <lastmod>2019-12-20T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/html/</loc>
-    <lastmod>2019-12-20T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/markdown/</loc>
-    <lastmod>2019-12-20T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/markdown-syntax/</loc>
-    <lastmod>2019-12-20T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/series/</loc>
-    <lastmod>2019-12-20T12:00:06+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/ko/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="scss_b4f67ac5085b89b62b54c1923e5a9145"
-                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/scss_b4f67ac5085b89b62b54c1923e5a9145/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/series/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/categories/syntax/</loc>
-    <lastmod>2019-12-20T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/themes/</loc>
-    <lastmod>2019-12-20T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/categories/themes/</loc>
-    <lastmod>2019-12-20T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/series/themes-guide/</loc>
-    <lastmod>2019-12-20T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/privacy/</loc>
-    <lastmod>2019-12-19T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/rich-content/</loc>
-    <lastmod>2019-12-19T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/shortcodes/</loc>
-    <lastmod>2019-12-19T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/syntax-highlight/</loc>
-    <lastmod>2019-12-18T10:33:41+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/math-typesetting/</loc>
-    <lastmod>2019-12-17T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/amoji/</loc>
-    <lastmod>2019-12-16T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/bamoji/</loc>
-    <lastmod>2019-12-16T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/emoji/</loc>
-    <lastmod>2019-12-16T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/emoji-support/</loc>
-    <lastmod>2019-12-16T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/gamoji/</loc>
-    <lastmod>2019-12-16T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/namoji/</loc>
-    <lastmod>2019-12-16T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/categories/diagram/</loc>
-    <lastmod>2019-11-18T21:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/test-viz/</loc>
-    <lastmod>2019-11-18T21:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/test-wavedrom/</loc>
-    <lastmod>2019-11-18T18:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/test-chartjs/</loc>
-    <lastmod>2019-11-18T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/test-js-sequence-diagrams/</loc>
-    <lastmod>2019-11-18T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/diagram/</loc>
-    <lastmod>2019-11-17T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/test-mermaid/</loc>
-    <lastmod>2019-11-17T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/categories/math/</loc>
-    <lastmod>2019-11-16T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/test-mathjax/</loc>
-    <lastmod>2019-11-16T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/test-katex/</loc>
-    <lastmod>2019-11-15T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/test-flowchart/</loc>
-    <lastmod>2019-11-14T12:00:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/gallery/cartoon/</loc>
-    <lastmod>2019-10-31T10:20:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/gallery/</loc>
-    <lastmod>2019-10-31T10:20:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/gallery/photo/</loc>
-    <lastmod>2019-10-31T10:20:16+09:00</lastmod>
   </url>
   
   <url>
@@ -374,6 +189,25 @@
   
   <url>
     <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/index/</loc>
+  </url>
+  
+  <url>
+    <loc>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/ko/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="scss_b4f67ac5085b89b62b54c1923e5a9145"
+                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/scss_b4f67ac5085b89b62b54c1923e5a9145/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/series/"
+                />
   </url>
   
 </urlset>

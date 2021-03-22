@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Multi-linear regression on Hugo Zzo Theme</title>
+    <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/multi-linear-regression/</link>
+    <description>Recent content in Multi-linear regression on Hugo Zzo Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>adrianvenegasreynoso@gmail.com (Adrián Venegas Reynoso)</managingEditor>
+    <webMaster>adrianvenegasreynoso@gmail.com (Adrián Venegas Reynoso)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Mon, 22 Mar 2021 19:48:29 +0100</lastBuildDate>
+    
+        <atom:link href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/multi-linear-regression/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>Genetic algorithms for multi linear regression</title>
+        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/genetic/</link>
+        <pubDate>Mon, 22 Mar 2021 19:48:29 +0100</pubDate>
+        <author>adrianvenegasreynoso@gmail.com (Adrián Venegas Reynoso)</author>
+        <atom:modified>Mon, 22 Mar 2021 19:48:29 +0100</atom:modified>
+        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/posts/genetic/</guid>
+        <description>Introduction Linear regression is one of the most useful techniques used by analytical chemists, since it allows us to find relate a response variable $Y$ with a controlled variable $X$ through a mathematical expression:
+$$ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i, i = 1,&amp;hellip;,n, $$
+where:
+ $\beta_0$ is the intercept, $\beta_1$ the slope $\varepsilon_i$ the error in the measurement.  As you can see, the previous equation has the subindex $i$, which means that each measured data point $Y_i$ can be associated with a data point $X_i$.</description>
+        
+        <dc:creator>Adrián</dc:creator>
+        <media:content url="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/images/feature2/color-palette.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Multi-linear regression</category>
+            
+          
+            
+              <category>Genetic algorithms</category>
+            
+          
+        
+        
+          
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

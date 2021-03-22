@@ -11,259 +11,61 @@
     <description>Recent content in Tags on Hugo Zzo Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>zzossig@gmail.com (zzossig)</managingEditor>
-    <webMaster>zzossig@gmail.com (zzossig)</webMaster>
+    <managingEditor>adrianvenegasreynoso@gmail.com (Adrián Venegas Reynoso)</managingEditor>
+    <webMaster>adrianvenegasreynoso@gmail.com (Adrián Venegas Reynoso)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Fri, 19 Mar 2021 19:22:15 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 22 Mar 2021 19:48:29 +0100</lastBuildDate>
     
         <atom:link href="https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
       
       <item>
+        <title>Genetic algorithms</title>
+        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/genetic-algorithms/</link>
+        <pubDate>Mon, 22 Mar 2021 19:48:29 +0100</pubDate>
+        <author>adrianvenegasreynoso@gmail.com (Adrián Venegas Reynoso)</author>
+        
+        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/genetic-algorithms/</guid>
+        <description></description>
+        
+        <dc:creator>Adrián Venegas Reynoso</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Multi-linear regression</title>
+        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/multi-linear-regression/</link>
+        <pubDate>Mon, 22 Mar 2021 19:48:29 +0100</pubDate>
+        <author>adrianvenegasreynoso@gmail.com (Adrián Venegas Reynoso)</author>
+        
+        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/multi-linear-regression/</guid>
+        <description></description>
+        
+        <dc:creator>Adrián Venegas Reynoso</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
         <title>hugo</title>
         <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/hugo/</link>
         <pubDate>Fri, 19 Mar 2021 19:22:15 +0100</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
+        <author>adrianvenegasreynoso@gmail.com (Adrián Venegas Reynoso)</author>
         
         <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/hugo/</guid>
         <description></description>
         
-        <dc:creator>zzossig</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>shortcode</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/shortcode/</link>
-        <pubDate>Sat, 25 Jan 2020 06:40:51 +0900</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
-        
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/shortcode/</guid>
-        <description></description>
-        
-        <dc:creator>zzossig</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>css</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/css/</link>
-        <pubDate>Fri, 20 Dec 2019 12:00:06 +0900</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
-        
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/css/</guid>
-        <description></description>
-        
-        <dc:creator>zzossig</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>html</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/html/</link>
-        <pubDate>Fri, 20 Dec 2019 12:00:06 +0900</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
-        
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/html/</guid>
-        <description></description>
-        
-        <dc:creator>zzossig</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>markdown</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/markdown/</link>
-        <pubDate>Fri, 20 Dec 2019 12:00:06 +0900</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
-        
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/markdown/</guid>
-        <description></description>
-        
-        <dc:creator>zzossig</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>themes</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/themes/</link>
-        <pubDate>Fri, 20 Dec 2019 12:00:06 +0900</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
-        
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/themes/</guid>
-        <description></description>
-        
-        <dc:creator>zzossig</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>privacy</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/privacy/</link>
-        <pubDate>Thu, 19 Dec 2019 12:00:06 +0900</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
-        
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/privacy/</guid>
-        <description></description>
-        
-        <dc:creator>zzossig</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>shortcodes</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/shortcodes/</link>
-        <pubDate>Thu, 19 Dec 2019 12:00:06 +0900</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
-        
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/shortcodes/</guid>
-        <description></description>
-        
-        <dc:creator>zzossig</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>amoji</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/amoji/</link>
-        <pubDate>Mon, 16 Dec 2019 12:00:06 +0900</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
-        
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/amoji/</guid>
-        <description></description>
-        
-        <dc:creator>zzossig</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>bamoji</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/bamoji/</link>
-        <pubDate>Mon, 16 Dec 2019 12:00:06 +0900</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
-        
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/bamoji/</guid>
-        <description></description>
-        
-        <dc:creator>zzossig</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>emoji</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/emoji/</link>
-        <pubDate>Mon, 16 Dec 2019 12:00:06 +0900</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
-        
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/emoji/</guid>
-        <description></description>
-        
-        <dc:creator>zzossig</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>gamoji</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/gamoji/</link>
-        <pubDate>Mon, 16 Dec 2019 12:00:06 +0900</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
-        
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/gamoji/</guid>
-        <description></description>
-        
-        <dc:creator>zzossig</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>namoji</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/namoji/</link>
-        <pubDate>Mon, 16 Dec 2019 12:00:06 +0900</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
-        
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/namoji/</guid>
-        <description></description>
-        
-        <dc:creator>zzossig</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>diagram</title>
-        <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/diagram/</link>
-        <pubDate>Sun, 17 Nov 2019 12:00:06 +0900</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
-        
-        <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/diagram/</guid>
-        <description></description>
-        
-        <dc:creator>zzossig</dc:creator>
+        <dc:creator>Adrián Venegas Reynoso</dc:creator>
         
         
         
@@ -276,12 +78,12 @@
         <title>index</title>
         <link>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/index/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        <author>zzossig@gmail.com (zzossig)</author>
+        <author>adrianvenegasreynoso@gmail.com (Adrián Venegas Reynoso)</author>
         
         <guid>https://adrian-venegasreynoso.github.io/AdrianVenegasReynosoChemometrics.github.io/en/tags/index/</guid>
         <description></description>
         
-        <dc:creator>zzossig</dc:creator>
+        <dc:creator>Adrián Venegas Reynoso</dc:creator>
         
         
         
